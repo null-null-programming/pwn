@@ -1,0 +1,30 @@
+"pwn template": {
+	"prefix": "temp",
+	  "body": [
+		"from pwn import *",
+		"",
+		"file_name='./pwnme'",
+		"libc_name='./libcname'",
+		"",
+		"context.binary = file_name",
+		"context.log_level = 'debug'",
+		"",
+		"HOST = 'target'",
+		"PORT = 1337",
+		"conn = None",
+		"",
+		"if len(sys.argv) > 1 and sys.argv[1] == 'r':",
+    	"    conn = remote(HOST, PORT)",
+		"else:",
+    	"    conn = process(file_name,env={'LD_PRELOAD': libc_name})",
+		"",
+		"elf=ELF(file_name)",
+		"libc=ELF(libc_name)",
+		"",
+		"",
+		"",
+		"conn.interactive()"
+	  ],
+     "description": "Log output to console"
+    }
+}
