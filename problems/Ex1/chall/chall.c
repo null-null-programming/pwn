@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define false -1
-
 void win(){
     printf("Congratulations!\n");
     printf("StackOverflow Complete!\n");
@@ -23,7 +21,7 @@ int main(){
 
     printf("%s: Hello,%s!\n\n",Alice,name);
 
-    if(strcmp(Alice,"Alice")==false){
+    if(strcmp(Alice,"Alice")!=0){
         win();
     }
 
